@@ -8,82 +8,76 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <style>
-  /* Reset & base */
+  /* Base */
   * {margin:0; padding:0; box-sizing:border-box;}
-  body {font-family: 'Roboto', sans-serif; line-height:1.6; color:#333; scroll-behavior:smooth;}
+  body {font-family:'Roboto', sans-serif; line-height:1.6; color:#333; scroll-behavior:smooth; background:#f5f7fa;}
   a {text-decoration:none; color: inherit;}
-  img {max-width:100%; display:block;}
-
-  /* Hero Section */
-  header {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1581093588401-09c02b6e1ee9?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-    height: 100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color: #fff;
-    text-align:center;
-    padding: 0 20px;
+  
+  /* Navigation */
+  nav {
+    position: fixed; top:0; left:0; width:100%; z-index:100;
+    background: rgba(0,0,0,0.7); display:flex; justify-content:flex-end; gap:25px;
+    padding:15px 30px; font-weight:600;
   }
-  header h1 {font-family: 'Montserrat', sans-serif; font-size:3em; margin-bottom:10px; animation: fadeInDown 1s;}
-  header p {font-size:1.5em; animation: fadeInUp 1.2s;}
+  nav a {color:#fff; transition:0.3s;}
+  nav a:hover {color:#00d1ff;}
 
-  /* Animations */
+  /* Hero */
+  header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1612831455547-1cb9983c199d?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:#fff; text-align:center;
+    padding:0 20px;
+  }
+  header h1 {font-family:'Montserrat', sans-serif; font-size:3.2em; margin-bottom:15px; animation: fadeInDown 1s;}
+  header p {font-size:1.6em; margin-bottom:30px; animation: fadeInUp 1.2s;}
+  header .cta-btn {padding:15px 30px; background:#00d1ff; color:#fff; border-radius:50px; font-weight:600; font-size:1.1em; transition:0.3s;}
+  header .cta-btn:hover {background:#007bff; cursor:pointer;}
+
   @keyframes fadeInDown {from {opacity:0; transform:translateY(-30px);} to {opacity:1; transform:translateY(0);}}
   @keyframes fadeInUp {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
 
-  /* Navigation */
-  nav {
-    position: fixed;
-    top:0; left:0; width:100%;
-    background: rgba(0,0,0,0.7);
-    padding:10px 20px;
-    display:flex; justify-content:flex-end; gap:20px;
-    z-index:100;
-  }
-  nav a {color:#fff; font-weight:600;}
-  nav a:hover {color:#00d1ff;}
+  section {padding:80px 20px; max-width:1100px; margin:0 auto;}
+  h2 {font-family:'Montserrat', sans-serif; font-size:2.5em; color:#007bff; margin-bottom:40px; text-align:center;}
+  p {margin-bottom:20px; font-size:1.15em; text-align:center;}
 
-  /* Sections */
-  section {padding:80px 20px; max-width:1000px; margin:0 auto;}
-  h2 {font-family:'Montserrat', sans-serif; font-size:2em; color:#007bff; margin-bottom:20px; text-align:center;}
-  p {margin-bottom:20px; text-align:center; font-size:1.1em;}
-
-  /* Services Grid */
-  .services {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+  /* Services */
+  .services {display:flex; flex-wrap:wrap; gap:25px; justify-content:center;}
   .service {
-    flex:1 1 300px;
-    background:#fff;
-    border-radius:15px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.1);
-    padding:30px;
-    text-align:center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    flex:1 1 300px; background:#fff; border-radius:20px; padding:30px; text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1); transition:0.3s;
   }
-  .service:hover {transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.2);}
+  .service:hover {transform:translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.2);}
+  .service i {font-size:3em; color:#007bff; margin-bottom:15px;}
   .service h3 {margin-bottom:10px; color:#007bff;}
-  .service p {font-size:1em;}
+
+  /* About Section */
+  .about p {max-width:800px; margin:0 auto 20px auto;}
+
+  /* Portfolio/Highlights */
+  .highlights {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;}
+  .highlight {background:#fff; padding:25px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); text-align:center; transition:0.3s;}
+  .highlight img {width:80px; margin-bottom:15px;}
+  .highlight h4 {margin-bottom:10px; color:#007bff;}
+  .highlight p {font-size:1em;}
 
   /* Contact */
-  .contact p {margin:5px 0; font-size:1.1em;}
-
+  .contact {text-align:center;}
+  .contact p {margin:8px 0;}
+  .contact a {color:#007bff; font-weight:600;}
+  
   /* Footer */
-  footer {
-    background:#333;
-    color:#fff;
-    text-align:center;
-    padding:30px 20px;
-    font-size:0.9em;
-  }
+  footer {background:#333; color:#fff; text-align:center; padding:40px 20px; font-size:0.9em;}
 
   /* Responsive */
   @media(max-width:768px){
-    header h1 {font-size:2.2em;}
+    header h1 {font-size:2.4em;}
     header p {font-size:1.2em;}
+    .services {flex-direction:column; align-items:center;}
   }
-
 </style>
 </head>
 <body>
@@ -92,19 +86,22 @@
 <nav>
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#highlights">Highlights</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- Hero Section -->
 <header>
   <h1>ABCDEFG Innovations Inc.</h1>
-  <p>Transforming Businesses with Cloud Computing & AI</p>
+  <p>Powering the Future with Cloud Computing & AI</p>
+  <a href="#contact" class="cta-btn">Get in Touch</a>
 </header>
 
 <!-- About Section -->
-<section id="about">
+<section id="about" class="about">
   <h2>About Us</h2>
-  <p>At ABCDEFG Innovations Inc., we leverage cutting-edge Cloud Computing and Artificial Intelligence technologies to deliver intelligent, scalable solutions that empower businesses to innovate and grow. Our mission is to bring future-ready technology to every client.</p>
+  <p>At ABCDEFG Innovations Inc., we harness the power of Cloud Computing and Artificial Intelligence to revolutionize the way businesses operate. From intelligent automation to scalable cloud infrastructure, we deliver innovative solutions that drive measurable results.</p>
+  <p>Our team of experts brings cutting-edge technology and strategic insights together to help your business thrive in the digital era.</p>
 </section>
 
 <!-- Services Section -->
@@ -112,16 +109,46 @@
   <h2>Our Services</h2>
   <div class="services">
     <div class="service">
+      <i class="fas fa-cloud"></i>
       <h3>Cloud Solutions</h3>
-      <p>Scalable cloud infrastructure, migration, and management services that ensure flexibility, security, and efficiency for your business.</p>
+      <p>Scalable cloud infrastructure, secure cloud migration, and managed services for modern businesses.</p>
     </div>
     <div class="service">
+      <i class="fas fa-robot"></i>
       <h3>AI & Machine Learning</h3>
-      <p>Implement AI-driven analytics, predictive models, and automation to optimize your operations and decision-making.</p>
+      <p>AI-powered analytics, predictive modeling, and intelligent automation to optimize operations.</p>
     </div>
     <div class="service">
-      <h3>Consulting</h3>
-      <p>Expert guidance for strategy, architecture, and deployment of cloud and AI initiatives to maximize ROI and innovation.</p>
+      <i class="fas fa-lightbulb"></i>
+      <h3>Consulting & Strategy</h3>
+      <p>Expert guidance for technology adoption, innovation strategy, and digital transformation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Highlights / Portfolio -->
+<section id="highlights">
+  <h2>Why Choose Us</h2>
+  <div class="highlights">
+    <div class="highlight">
+      <img src="https://img.icons8.com/clouds/100/000000/cloud.png" alt="Cloud Icon"/>
+      <h4>Scalable Cloud</h4>
+      <p>Flexible cloud platforms tailored to your business size and growth needs.</p>
+    </div>
+    <div class="highlight">
+      <img src="https://img.icons8.com/clouds/100/000000/artificial-intelligence.png" alt="AI Icon"/>
+      <h4>AI Innovation</h4>
+      <p>Cutting-edge AI solutions to automate processes and extract insights from data.</p>
+    </div>
+    <div class="highlight">
+      <img src="https://img.icons8.com/clouds/100/000000/security-checked.png" alt="Security Icon"/>
+      <h4>Secure & Reliable</h4>
+      <p>High-standard security protocols and reliable services you can trust.</p>
+    </div>
+    <div class="highlight">
+      <img src="https://img.icons8.com/clouds/100/000000/idea.png" alt="Idea Icon"/>
+      <h4>Expert Team</h4>
+      <p>Experienced professionals delivering strategic and technological excellence.</p>
     </div>
   </div>
 </section>

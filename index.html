@@ -1,202 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MARUTI Innovations Inc.</title>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-<!-- Font Awesome (FIXED) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- AOS Animations -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-<!-- Particles -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Roboto', sans-serif; background:#f5f7fa; scroll-behavior:smooth;}
-
-nav {
-  position: fixed; top:0; width:100%; z-index:100;
-  background: rgba(0,0,0,0.7);
-  display:flex; justify-content:flex-end; gap:25px;
-  padding:15px 30px;
-}
-nav a {color:#fff; font-weight:600;}
-nav a:hover {color:#00d1ff;}
-
-header {
-  position: relative;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-}
-#particles-js {position:absolute; width:100%; height:100%;}
-header .content {position:relative; z-index:2;}
-
-header h1 {font-size:3.2em;}
-header p {font-size:1.5em; margin:15px 0;}
-.cta {background:#00d1ff; padding:12px 25px; border-radius:30px; color:white;}
-
-section {padding:80px 20px; max-width:1100px; margin:auto;}
-h2 {text-align:center; color:#007bff; margin-bottom:30px;}
-
-.services, .projects, .testimonials {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
-}
-
-.card {
-  background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  text-align:center;
-}
-
-.card i {font-size:40px; color:#007bff; margin-bottom:10px;}
-
-.project img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
-}
-
-.partners {
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  flex-wrap:wrap;
-}
-.partners img {
-  height:60px;
-  filter:grayscale(50%);
-}
-.partners img:hover {filter:none;}
-
-footer {
-  background:#333;
-  color:white;
-  text-align:center;
-  padding:30px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARUTI Innovations Inc. | Cloud & AI Solutions</title>
+  <meta name="description" content="MARUTI Innovations Inc. delivers cloud computing, AI-driven solutions, and consulting services to help businesses grow smarter and faster.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- Header / Hero -->
+  <header>
+    <div class="container">
+      <h1>MARUTI Innovations Inc.</h1>
+      <p>Cloud Computing & AI Solutions that Drive Business Growth</p>
+      <a href="#contact" class="btn">Contact Us</a>
+    </div>
+  </header>
 
-<header>
-  <div id="particles-js"></div>
-  <div class="content">
-    <h1>MARUTI Innovations Inc.</h1>
-    <p>Cloud Computing & AI Solutions</p>
-    <a href="#contact" class="cta">Contact Us</a>
-  </div>
-</header>
+  <!-- About Us -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>At <strong>MARUTI Innovations Inc.</strong>, we specialize in building scalable cloud platforms and AI-driven solutions that empower businesses to operate smarter, faster, and more securely. Our team combines deep technical expertise with industry experience to deliver solutions tailored to your unique business needs.</p>
+      <p>We focus on creating measurable value. By partnering closely with our clients, we ensure every project aligns with strategic goals, maximizes ROI, and enhances user experiences. Our mission is to turn innovative ideas into intelligent, reliable, and scalable solutions that give your business a competitive edge.</p>
+    </div>
+  </section>
 
-<section id="about">
-<h2>About Us</h2>
-<p style="text-align:center;">
-At MARUTI Innovations Inc., we build scalable cloud platforms and AI-driven solutions to help businesses operate smarter, faster, and more securely. Our team combines deep technical expertise with industry knowledge to deliver solutions that are tailored to your business needs.
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service">
+        <h3>Cloud</h3>
+        <p>Designing and implementing scalable, secure cloud infrastructures with seamless migrations that support business growth.</p>
+      </div>
+      <div class="service">
+        <h3>AI</h3>
+        <p>Leveraging AI to automate workflows, provide predictive insights, and optimize operations for smarter decision-making.</p>
+      </div>
+      <div class="service">
+        <h3>Consulting</h3>
+        <p>Providing technology strategy, hands-on guidance, and digital transformation support to achieve measurable results.</p>
+      </div>
+    </div>
+  </section>
 
-We focus on creating measurable value. By partnering closely with our clients, we ensure every project aligns with strategic goals, maximizes ROI, and enhances user experience. Our mission is to turn innovative ideas into intelligent, reliable, and scalable solutions that give your business a competitive edge.
-</p>
-</section>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2>Our Projects</h2>
+      <div class="project">
+        <h3>AI Analytics</h3>
+        <p>Transformed complex business data into actionable insights, enabling clients to anticipate trends and make informed decisions.</p>
+      </div>
+      <div class="project">
+        <h3>Cloud Migration</h3>
+        <p>Seamlessly upgraded legacy systems to cloud infrastructure, improving performance, security, and scalability.</p>
+      </div>
+      <div class="project">
+        <h3>Automation</h3>
+        <p>Implemented AI-powered workflows to streamline operations, increase efficiency, and free teams for high-value tasks.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="services">
-<h2>Services</h2>
-<div class="services">
-  <div class="card">
-    <i class="fas fa-cloud"></i>
-    <h3>Cloud</h3>
-    <p>Migration & scalable infrastructure</p>
-  </div>
-  <div class="card">
-    <i class="fas fa-robot"></i>
-    <h3>AI</h3>
-    <p>Automation & predictive analytics</p>
-  </div>
-  <div class="card">
-    <i class="fas fa-lightbulb"></i>
-    <h3>Consulting</h3>
-    <p>Technology strategy & execution</p>
-  </div>
-</div>
-</section>
+  <!-- Partners -->
+  <section id="partners">
+    <div class="container">
+      <h2>Our Partners</h2>
+      <div class="partner-logos">
+        <img src="partner1.png" alt="Partner 1">
+        <img src="partner2.png" alt="Partner 2">
+        <img src="partner3.png" alt="Partner 3">
+        <img src="partner4.png" alt="Partner 4">
+      </div>
+    </div>
+  </section>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="projects">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200">
-    <h3>AI Analytics</h3>
-    <p>Predictive business insights</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=200">
-    <h3>Cloud Migration</h3>
-    <p>Seamless infrastructure upgrade</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200">
-    <h3>Automation</h3>
-    <p>AI-powered workflows</p>
-  </div>
-</div>
-</section>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Have a project in mind or want to explore how we can help your business grow? Reach out to us today.</p>
+      <p>Email: <a href="mailto:info@marutiinnovations.com">info@marutiinnovations.com</a></p>
+    </div>
+  </section>
 
-<section>
-<h2>Partners</h2>
-<div class="partners">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoft.svg">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ibm.svg">
-</div>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p style="text-align:center;">
-Email: info@marutiinnovations.com<br>
-</p>
-</section>
-
-<footer>
-© 2026 MARUTI Innovations Inc.
-</footer>
-
-<script>
-AOS.init();
-
-particlesJS("particles-js", {
-  particles: {
-    number: {value: 60},
-    color: {value: "#00d1ff"},
-    line_linked: {enable:true, color:"#00d1ff"},
-    move: {speed:2}
-  }
-});
-</script>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MARUTI Innovations Inc. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

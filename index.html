@@ -5,40 +5,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
 <title>Maruti Innovations Inc. | Cloud & AI Solutions</title>
 <meta name="description" content="Maruti Innovations Inc. provides cloud computing, AI solutions, and technology consulting to help businesses scale, innovate, and grow.">
 
-<!-- Favicon -->
 <link rel="icon" href="https://Marutiinnovations.github.io/my-page/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="https://Marutiinnovations.github.io/my-page/favicon.ico" type="image/x-icon">
-  
-<!-- Fonts -->
+
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- AOS Animations -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-<!-- Particles -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  
-<style>
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Roboto', sans-serif; background:#f5f7fa; scroll-behavior:smooth;}
 
+<style>
+/* General Styles */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#f5f7fa; scroll-behavior:smooth; color:#333;}
+a {text-decoration:none;}
+
+/* Navbar */
 nav {
   position: fixed; top:0; width:100%; z-index:100;
   background: rgba(0,0,0,0.7);
   display:flex; justify-content:flex-end; gap:25px;
   padding:15px 30px;
+  transition: background 0.3s;
 }
 nav a {color:#fff; font-weight:600;}
 nav a:hover {color:#00d1ff;}
+nav.scrolled {background: rgba(0,0,0,0.9);}
 
+/* Header */
 header {
   position: relative;
   height:100vh;
@@ -48,64 +44,112 @@ header {
   text-align:center;
   color:white;
   background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  overflow:hidden;
 }
 #particles-js {position:absolute; width:100%; height:100%;}
 header .content {position:relative; z-index:2;}
-
 header h1 {font-size:3.2em;}
 header p {font-size:1.5em; margin:15px 0;}
-.cta {background:#00d1ff; padding:12px 25px; border-radius:30px; color:white;}
+.cta {background:#00d1ff; padding:12px 25px; border-radius:30px; color:white; font-weight:600; transition: background 0.3s;}
+.cta:hover {background:#007bff;}
 
+/* Sections */
 section {padding:80px 20px; max-width:1100px; margin:auto;}
 h2 {text-align:center; color:#007bff; margin-bottom:30px;}
 
-.services, .projects, .testimonials {
+/* Cards */
+.services, .projects, .industries {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:25px;
 }
-
 .card {
   background:white;
   padding:25px;
   border-radius:15px;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   text-align:center;
+  overflow:hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow:0 20px 35px rgba(0,0,0,0.2);
+}
 .card i {font-size:40px; color:#007bff; margin-bottom:10px;}
 
-.project img {
+/* Projects */
+.projects img {
   width:100%;
-  height:200px;
+  height:180px;
   object-fit:cover;
   border-radius:10px;
+  display:block;
+  margin-bottom:15px;
 }
+.view-btn {
+  display:inline-block;
+  padding:10px 20px;
+  background:#00d1ff;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:10px;
+  transition: background 0.3s;
+}
+.view-btn:hover {background:#007bff;}
 
+/* Partners */
 .partners {
   display:flex;
   justify-content:center;
   gap:40px;
   flex-wrap:wrap;
 }
-.partners img {
-  height:60px;
-  filter:grayscale(50%);
-}
+.partners img {height:60px; filter:grayscale(50%);}
 .partners img:hover {filter:none;}
 
-footer {
-  background:#333;
-  color:white;
-  text-align:center;
-  padding:30px;
+/* Footer */
+footer {background:#333; color:white; text-align:center; padding:30px;}
+
+/* Modal Styles */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:200;
+  left:0; top:0; width:100%; height:100%;
+  overflow:auto;
+  background:rgba(0,0,0,0.7);
 }
+.modal-content {
+  background:#fff;
+  margin:100px auto;
+  padding:30px;
+  border-radius:15px;
+  max-width:700px;
+  position:relative;
+  animation:fadeIn 0.5s ease-in-out;
+}
+.close-btn {
+  position:absolute; top:15px; right:20px;
+  font-size:25px;
+  cursor:pointer;
+  color:#333;
+  transition: color 0.3s;
+}
+.close-btn:hover {color:#007bff;}
+@keyframes fadeIn {from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);}}
+
+/* Scroll Animations */
+[data-aos] {opacity:0; transform:translateY(20px);}
+[data-aos].aos-animate {opacity:1; transform:translateY(0); transition: all 0.6s ease-out;}
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav id="navbar">
   <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#projects">Projects</a>
@@ -114,63 +158,133 @@ footer {
 
 <header>
   <div id="particles-js"></div>
-  <div class="content">
+  <div class="content" data-aos="fade-up">
     <h1>Maruti Innovations Inc.</h1>
     <p>Cloud Computing & AI Solutions that Drive Business Growth</p>
     <a href="#contact" class="cta">Contact Us</a>
   </div>
 </header>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
 <h2>About Us</h2>
 <p style="text-align:center;">
-At <strong>Maruti Innovations Inc.</strong>, we build scalable cloud platforms and AI-driven solutions that empower businesses to operate smarter, faster, and more securely. Our team combines deep technical expertise with industry experience to deliver solutions tailored to your unique business needs.
-
-We focus on creating measurable value. By partnering closely with our clients, we ensure every project aligns with strategic goals, maximizes ROI, and enhances user experiences. Our mission is to turn innovative ideas into intelligent, reliable, and scalable solutions that give your business a competitive edge.
+At <strong>Maruti Innovations Inc.</strong>, we specialize in delivering modern cloud and AI solutions that empower organizations to innovate, scale, and stay competitive in a rapidly evolving digital world.
+<br><br>
+Our team brings together deep technical expertise and real-world business experience to design solutions that are not only advanced but also practical and results-driven.
+<br><br>
+We help businesses modernize legacy systems, migrate infrastructure to the cloud, and build data-driven platforms that unlock valuable insights.
+<br><br>
+From building intelligent automation workflows to implementing machine learning models, we enable organizations to streamline operations and make smarter decisions.
+<br><br>
+We believe in strong partnerships and transparent collaboration. By working closely with our clients, we ensure that every project delivers measurable outcomes and aligns with strategic business objectives.
+<br><br>
+At Maruti Innovations Inc., our mission is to turn complex challenges into innovative solutions that drive success and create lasting value for our clients. We are committed to continuous learning, adopting cutting-edge technology, and staying ahead of industry trends.
 </p>
 </section>
 
-<section id="services">
+<section id="services" data-aos="fade-up">
 <h2>Services</h2>
 <div class="services">
-  <div class="card">
-    <i class="fas fa-cloud"></i>
-    <h3>Cloud</h3>
-    <p>Designing scalable, secure cloud infrastructures with seamless migrations and flexible deployment to support your growth.</p>
+  <div class="card"><i class="fas fa-cloud"></i><h3>Cloud Engineering</h3><p>End-to-end cloud solutions including architecture design, migration, and optimization.</p></div>
+  <div class="card"><i class="fas fa-robot"></i><h3>Artificial Intelligence</h3><p>Machine learning, NLP, and predictive analytics to enhance business intelligence.</p></div>
+  <div class="card"><i class="fas fa-lightbulb"></i><h3>Technology Consulting</h3><p>Strategic advisory services for digital transformation.</p></div>
+  <div class="card"><i class="fas fa-database"></i><h3>Data Engineering</h3><p>Building scalable data pipelines and analytics platforms.</p></div>
+  <div class="card"><i class="fas fa-shield-alt"></i><h3>Cloud Security</h3><p>Security-first architecture and compliance solutions.</p></div>
+  <div class="card"><i class="fas fa-cogs"></i><h3>Automation & DevOps</h3><p>CI/CD pipelines and infrastructure automation.</p></div>
+</div>
+</section>
+
+<section id="projects" data-aos="fade-up">
+<h2>Projects</h2>
+<div class="projects">
+  <div class="card" data-details="
+AI Analytics Platform:
+- Developed using Python, TensorFlow, and Pandas.
+- Improved forecasting accuracy by 40% for client sales data.
+- Implemented interactive dashboards for real-time insights.
+- Reduced manual reporting efforts by 50%.
+- Delivered actionable predictions that informed strategic decisions.
+">
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400">
+    <h3>AI Analytics Platform</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
   </div>
-  <div class="card">
-    <i class="fas fa-robot"></i>
-    <h3>AI</h3>
-    <p>AI-driven automation, predictive analytics, and workflow optimization to help your business make smarter decisions.</p>
+  <div class="card" data-details="
+Cloud Migration:
+- Migrated legacy applications to AWS and Azure cloud environments.
+- Reduced infrastructure costs by 30%.
+- Ensured zero downtime during migration.
+- Implemented automated monitoring and backup solutions.
+- Improved system scalability and response time.
+">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400">
+    <h3>Cloud Migration</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
   </div>
-  <div class="card">
-    <i class="fas fa-lightbulb"></i>
-    <h3>Consulting</h3>
-    <p>Technology strategy, digital transformation, and hands-on guidance to achieve measurable business results.</p>
+  <div class="card" data-details="
+Automation:
+- Built AI-powered workflows for operations and reporting.
+- Streamlined repetitive tasks and reduced manual errors.
+- Integrated RPA (Robotic Process Automation) with internal systems.
+- Increased team productivity by 35%.
+- Enabled faster decision-making with automated alerts.
+">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400">
+    <h3>Automation</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
+  </div>
+  <div class="card" data-details="
+Data Platform:
+- Built a highly scalable data pipeline handling millions of transactions daily.
+- Integrated ETL pipelines, data lakes, and cloud storage solutions.
+- Real-time analytics dashboards for business monitoring.
+- Ensured robust data security and compliance.
+- Supported predictive modeling and advanced reporting.
+">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400">
+    <h3>Data Platform</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
+  </div>
+  <div class="card" data-details="
+Cloud Security Framework:
+- Designed multi-cloud architecture with secure authentication and authorization.
+- Implemented continuous monitoring, threat detection, and alerting.
+- Compliance with ISO 27001 and GDPR standards.
+- Conducted vulnerability assessments and penetration testing.
+- Reduced potential security risks significantly.
+">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400">
+    <h3>Cloud Security Framework</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
+  </div>
+  <div class="card" data-details="
+IoT Integration:
+- Connected IoT devices for real-time monitoring of equipment.
+- Built dashboards for predictive maintenance and analytics.
+- Reduced downtime by enabling proactive alerts.
+- Integrated IoT systems with existing cloud infrastructure.
+- Enhanced operational efficiency and cost-effectiveness.
+">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400">
+    <h3>IoT Integration</h3>
+    <p>Click below to view full details.</p>
+    <a href="#" class="view-btn">View Details</a>
   </div>
 </div>
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
-<div class="projects">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200">
-    <h3>AI Analytics</h3>
-    <p>Turned complex business data into actionable insights, enabling informed decisions and anticipating trends.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=200">
-    <h3>Cloud Migration</h3>
-    <p>Seamlessly upgraded legacy systems to cloud infrastructure, enhancing performance, security, and scalability.</p>
-  </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200">
-    <h3>Automation</h3>
-    <p>Implemented AI-powered workflows to streamline operations, increase efficiency, and free teams for high-value work.</p>
+<!-- Modal -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="modalText"></div>
   </div>
 </div>
-</section>
 
 <section>
 <h2>Partners</h2>
@@ -182,13 +296,11 @@ We focus on creating measurable value. By partnering closely with our clients, w
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
 <h2>Contact</h2>
 <p style="text-align:center;">
-Have a project in mind or want to explore how we can help your business grow? Reach out to us today.<br><br>
-
+Have a project in mind? Let’s build something great together.<br><br>
 Email: <a href="mailto:info@Marutiinnovations.com">info@Marutiinnovations.com</a><br><br>
-
 Office: 350 NORTHERN BLVD, ALBANY NY 12204 (USA)
 </p>
 </section>
@@ -199,15 +311,32 @@ Office: 350 NORTHERN BLVD, ALBANY NY 12204 (USA)
 
 <script>
 AOS.init();
-
 particlesJS("particles-js", {
-  particles: {
-    number: {value: 60},
-    color: {value: "#00d1ff"},
-    line_linked: {enable:true, color:"#00d1ff"},
-    move: {speed:2}
-  }
+  particles: {number: {value:60}, color:{value:"#00d1ff"}, line_linked:{enable:true,color:"#00d1ff"}, move:{speed:2}}
 });
+
+// Navbar scroll background
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Modal functionality
+const modal = document.getElementById('projectModal');
+const modalText = document.getElementById('modalText');
+const viewBtns = document.querySelectorAll('.view-btn');
+const closeBtn = document.querySelector('.close-btn');
+
+viewBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const details = btn.closest('.card').dataset.details;
+    modalText.innerHTML = '<pre style="white-space:pre-wrap;">' + details + '</pre>';
+    modal.style.display = 'block';
+  });
+});
+
+closeBtn.addEventListener('click', () => modal.style.display = 'none');
+window.addEventListener('click', e => { if(e.target==modal){modal.style.display='none';} });
 </script>
 
 </body>
